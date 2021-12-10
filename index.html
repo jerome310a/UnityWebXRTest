@@ -49,8 +49,16 @@
       var unityInstance = null;
       
 
-      canvasContainer.style.width = "1280px";
-      canvasContainer.style.height = "720px";
+      var x = window.innerWidth * 0.9;
+	  var y = window.innerHeight * 0.9;
+	  if (y > x)
+	  {
+		var t = x;
+		x = y;
+		y = t;
+	  }
+	  canvasContainer.style.width = x.toString() + "px";
+	  canvasContainer.style.height = y.toString() + "px";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
